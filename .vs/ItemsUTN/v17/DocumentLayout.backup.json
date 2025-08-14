@@ -30,7 +30,8 @@
               "RelativeToolTip": "Items\\PokeAPICurso\\PokeAPI\\Models\\Pokemones.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T17:45:10.875Z"
+              "WhenOpened": "2025-08-13T17:45:10.875Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -40,8 +41,10 @@
               "RelativeDocumentMoniker": "Items\\PokeAPICurso\\PokeAPI\\Models\\Item.cs",
               "ToolTip": "C:\\Users\\usuario\\Documents\\ItemsUTN\\Items\\PokeAPICurso\\PokeAPI\\Models\\Item.cs",
               "RelativeToolTip": "Items\\PokeAPICurso\\PokeAPI\\Models\\Item.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T17:44:31.213Z"
+              "WhenOpened": "2025-08-13T17:44:31.213Z",
+              "EditorCaption": ""
             }
           ]
         }
