@@ -1,0 +1,147 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\Bandera.png" />
+    <None Remove="Resources\Images\ExtraButtons.png" />
+    <None Remove="Resources\Images\Kanto.png" />
+    <None Remove="Resources\Images\Lance.jpg" />
+    <None Remove="Resources\Images\PadPokemon.png" />
+    <None Remove="Resources\Images\Pokeball.png" />
+    <None Remove="Resources\Images\PokeCenter.png" />
+    <None Remove="Resources\Images\Pokedex.png" />
+    <None Remove="Resources\PokeImages\Beedrill.png" />
+    <None Remove="Resources\PokeImages\Blastoise.png" />
+    <None Remove="Resources\PokeImages\Bulbasaur.png" />
+    <None Remove="Resources\PokeImages\Butterfree.png" />
+    <None Remove="Resources\PokeImages\Caterpie.png" />
+    <None Remove="Resources\PokeImages\Charizard.png" />
+    <None Remove="Resources\PokeImages\Charmander.png" />
+    <None Remove="Resources\PokeImages\Charmeleon.png" />
+    <None Remove="Resources\PokeImages\Ivysaur.png" />
+    <None Remove="Resources\PokeImages\Kakuna.png" />
+    <None Remove="Resources\PokeImages\Metapod.png" />
+    <None Remove="Resources\PokeImages\MisingNo.jpg" />
+    <None Remove="Resources\PokeImages\Pidgeot.png" />
+    <None Remove="Resources\PokeImages\Pidgeotto.png" />
+    <None Remove="Resources\PokeImages\Pidgey.png" />
+    <None Remove="Resources\PokeImages\Raticate.png" />
+    <None Remove="Resources\PokeImages\Rattata.png" />
+    <None Remove="Resources\PokeImages\Squirtle.png" />
+    <None Remove="Resources\PokeImages\Venusaur.png" />
+    <None Remove="Resources\PokeImages\Weedle.png" />
+    <None Remove="Resources\TypeImages\Planta.png" />
+    <None Remove="Resources\TypeImages\Veneno.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\Bandera.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Kanto.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Lance.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\PokeCenter.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Beedrill.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Blastoise.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\ExtraButtons.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\PadPokemon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Pokeball.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Pokedex.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Bulbasaur.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Butterfree.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Caterpie.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Charizard.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Charmander.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Charmeleon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Ivysaur.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Kakuna.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Metapod.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\MisingNo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Pidgeot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Pidgeotto.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Pidgey.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Raticate.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Rattata.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Squirtle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Venusaur.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Wartortle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PokeImages\Weedle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\TypeImages\Planta.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\TypeImages\Veneno.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

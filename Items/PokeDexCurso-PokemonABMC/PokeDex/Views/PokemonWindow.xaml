@@ -1,0 +1,53 @@
+﻿<Window x:Name="PokeWin" x:Class="PokeDex.Views.PokemonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokeDex.Views"
+        mc:Ignorable="d"
+        Title="Previsualizacion Pokemon" 
+        Height="450" 
+        Width="800" 
+        Loaded="PokeWin_Loaded"
+        Background="{DynamicResource PrimaryColorBack}" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Viewbox x:Name="MainView" Stretch="Fill">
+        <Grid x:Name="MainGrid" Height="450"  Width="800" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="71*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="31*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="119*"/>
+                <ColumnDefinition Width="281*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="PreImage" Margin="50,40,50,40" Source="/Resources/PokeImages/MisingNo.jpg" />
+
+            <Label x:Name="Label1" Grid.Column="1" Foreground="WhiteSmoke" FontFamily="{DynamicResource TitleFont}" FontWeight="SemiBold" Content="Nombre" HorizontalAlignment="Left" Margin="23,24,0,0" VerticalAlignment="Top" FontSize="24"/>
+            <TextBox x:Name="NameTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="141,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" FontSize="24"/>
+
+            <Label x:Name="Label2" Grid.Column="1" Foreground="WhiteSmoke" FontFamily="{DynamicResource TitleFont}" FontWeight="SemiBold" Content="Peso (Kg)" HorizontalAlignment="Left" Margin="22,107,0,0" VerticalAlignment="Top" FontSize="24"/>
+            <TextBox x:Name="WeightTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="42,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" FontSize="24"/>
+
+            <Label x:Name="Label3" Grid.Column="1" Foreground="WhiteSmoke" FontFamily="{DynamicResource TitleFont}" FontWeight="SemiBold" Content="Altura (m)" HorizontalAlignment="Center" Margin="0,107,0,0" VerticalAlignment="Top" FontSize="24"/>
+            <TextBox x:Name="SizeTextBox" Grid.Column="1" HorizontalAlignment="Center" Margin="0,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" FontSize="24"/>
+
+            <Label x:Name="Label4" Grid.Column="1" Foreground="WhiteSmoke" FontFamily="{DynamicResource TitleFont}" FontWeight="SemiBold" Content="Gen" HorizontalAlignment="Left" Margin="426,107,0,0" VerticalAlignment="Top" FontSize="24"/>
+            <TextBox x:Name="GenTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="416,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" FontSize="24"/>
+
+            <Label x:Name="Label5" Foreground="WhiteSmoke" FontFamily="{DynamicResource TitleFont}" FontWeight="SemiBold" Content="Tipo Primario" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" Grid.Row="1" Margin="39,18,0,0"/>
+            <Label x:Name="Label6" Foreground="WhiteSmoke" FontFamily="{DynamicResource TitleFont}" FontWeight="SemiBold" Content="Tipo Secundario" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" FontSize="24" Grid.Row="1"/>
+
+            <ComboBox x:Name="FirstComboBox"  IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Left" Margin="42,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="448" FontSize="24"/>
+            <ComboBox x:Name="SecondComboBox" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Left" Margin="42,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="448" FontSize="24"/>
+
+            <Button x:Name="CreateButton" Style="{DynamicResource OptionsButton}" Content="Crear" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Height="73" Width="198" Margin="30,0,0,0" Click="CreateButton_Click"/>
+            <Button x:Name="ModButton"    Style="{DynamicResource OptionsButton}" Content="Modificar" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Height="73" Width="198" Grid.Column="1" Margin="42,0,0,0" Click="ModButton_Click"/>
+            <Button x:Name="DeleteButton" Style="{DynamicResource OptionsButton}" Content="Eliminar" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Height="73" Width="198" Grid.Column="1" Margin="292,0,0,0" Click="DeleteButton_Click"/>
+
+            <Label x:Name="Label7" Foreground="WhiteSmoke" FontFamily="{DynamicResource TitleFont}" FontWeight="SemiBold" Content="Pokemon Visualizado" HorizontalAlignment="Center" Margin="0,176,0,0" VerticalAlignment="Top" FontSize="18"/>
+            <Button x:Name="restoreButton" Style="{DynamicResource OptionsButton}" Content="x" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Height="39" Width="36" Grid.Column="1" Margin="505,81,0,0" Click="restoreButton_Click"/>
+
+        </Grid>
+    </Viewbox>
+</Window>

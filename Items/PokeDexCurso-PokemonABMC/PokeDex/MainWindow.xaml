@@ -1,0 +1,124 @@
+﻿<Window x:Class="PokeDex.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokeDex"
+        mc:Ignorable="d" 
+        Title="Pantalla principal" 
+        d:Height="1080"
+        d:Width="1920"
+        x:Name="MainWin"
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="ThreeDBorderWindow" 
+        Loaded="MainWin_Loaded" 
+        Activated="MainWin_Activated" 
+        Deactivated="MainWin_Deactivated" 
+        Closing="MainWin_Closing" 
+        Icon="/Resources/Images/Pokedex.png" 
+        Background="{DynamicResource PrimaryColorBack}">
+
+    <Viewbox x:Name="MainView" Stretch="Fill" >
+        <Grid x:Name="MainGrid" Height="1080" Width="1920">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="MainLabel" Content="POKEDEX NACIONAL" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="WhiteSmoke" FontFamily="Courier New" FontSize="65" FontWeight="SemiBold" Grid.Column="1" Margin="369,0,0,0"/>
+            <Border x:Name="PokeBorder" BorderBrush="Black" BorderThickness="3" CornerRadius="45" Height="100" Width="100" Focusable="True">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Resources/Images/Pokeball.png"/>
+                </Border.Background>
+            </Border>
+            <Border x:Name="FlagBorder" BorderBrush="Black" BorderThickness="3" CornerRadius="45" Height="100" Width="100" Grid.Column="1" Margin="1458,17,88,10">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Resources/Images/Bandera.png"/>
+                </Border.Background>
+            </Border>
+            <Border x:Name="LeftBorder" Grid.Row="1" Background="{DynamicResource SecondaryColorBack}" CornerRadius="15" Margin="15 25 0 15">
+                <StackPanel x:Name="LeftStack" Margin="0 50 0 0">
+                    <Button x:Name="HomeButton" Height="80" Margin="0 10 0 0" Style="{DynamicResource LeftButtonStyle}" Content="Inicio" HorizontalAlignment="Center" Width="254" Click="HomeButton_Click" FontSize="34"/>
+                    <Button x:Name="PokedexButton"  Height="80"  Margin="0 10 0 0" Style="{DynamicResource LeftButtonStyle}" Content="Pokedex" HorizontalAlignment="Center" Width="254" Click="PokedexButton_Click" FontSize="34"/>
+                    <Button x:Name="CombatsButton"  Height="80" Margin="0 10 0 0" Style="{DynamicResource LeftButtonStyle}" Content="Combates" HorizontalAlignment="Center" Width="254" Click="CombatsButton_Click" FontSize="34"/>
+                    <Button x:Name="TrainersButton"  Height="80" Margin="0 10 0 0" Style="{DynamicResource LeftButtonStyle}" Content="Entrenadores" HorizontalAlignment="Center" Width="254" FontSize="34" Click="TrainersButton_Click"/>
+                </StackPanel>
+            </Border>
+            <Grid x:Name="FormGrid" Grid.Column="1" Grid.Row="1">
+                <Grid x:Name="InitGrid" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Border x:Name="TopPanel" Margin="25" CornerRadius="15" Background="{DynamicResource SecondaryColorBack}" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="NewsLabel1" Content="Ultimas Noticias" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="WhiteSmoke" FontFamily="Courier New" FontSize="40" FontWeight="SemiBold" Grid.Column="1"/>
+                            <TextBlock x:Name="InfoText" Padding="0 30 0 0" Grid.Row="1" Text="       ¡El mundo pokemon en shock! El entrenador de la Liga Pokemon de Kanto referdo como &quot;Lance&quot; fue detenido hoy. Se le acusa de tener Dragonites por debajo de su nivel evolutivo debido al consumo excesivo de Caramelos Raros. La comision de asuntos internos a comenzado una  (...)" 
+                                       FontSize="30" Foreground="WhiteSmoke" TextWrapping="Wrap" FontFamily="Arial" Grid.ColumnSpan="3" Margin="73,0,587,87"/>
+                            <Border x:Name="LanceImage" Margin="35,0,35,70" Grid.Column="2" Grid.Row="1" CornerRadius="25" >
+                                <Border.Background>
+                                    <ImageBrush ImageSource="/Resources/Images/Lance.jpg"/>
+                                </Border.Background>
+                            </Border>
+
+                            <Button x:Name="UrlButton" BorderBrush="Transparent" Foreground="WhiteSmoke" Content="Ver mas" Margin="10,237,10,0" Grid.Row="1" VerticalAlignment="Top" FontSize="32" FontFamily="Arial" Background="{x:Null}" Height="54" Click="UrlButton_Click" Grid.Column="1"/>
+                            <Label x:Name="PieFoto" Content="(Foto del sospechoso antes de ser arrestado)" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="WhiteSmoke" FontFamily="Arial" FontSize="18" FontWeight="SemiBold" Margin="0,269,0,0" Grid.Column="2" Grid.Row="1"/>
+                        </Grid>
+                    </Border>
+                    <Border x:Name="LeftPanel" Margin="25" CornerRadius="50" Grid.Row="1">
+                        <Border.Background>
+                            <ImageBrush ImageSource="/Resources/Images/PokeCenter.png" Opacity="0.3" Stretch="Fill"/>
+                        </Border.Background>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="6*"/>
+                                <ColumnDefinition Width="6*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="4*"/>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="Etiqueta1" Content=" Dias sin &#xA;Accidentes" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="WhiteSmoke" FontFamily="Courier New" FontSize="40" FontWeight="SemiBold" Grid.Column="1" Grid.Row="1"/>
+                            <Label x:Name="Etiqueta2" Content="  Pokemones &#xA; Capturados" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="WhiteSmoke" FontFamily="Courier New" FontSize="40" FontWeight="SemiBold" Grid.Column="2" Grid.Row="1"/>
+                            <Label x:Name="Numero1" Content="39" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="WhiteSmoke" FontFamily="Arial" FontSize="90" FontWeight="Bold" Grid.Column="1" Grid.Row="2" Margin="0,22,0,0"/>
+                            <Label x:Name="Numero2" Content="105" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="WhiteSmoke" FontFamily="Arial" FontSize="90" FontWeight="Bold" Grid.Column="2" Grid.Row="2" Margin="0,22,0,0"/>
+
+                        </Grid>
+                    </Border>
+                    <Border x:Name="RightPanel" Margin="25" CornerRadius="15"  Grid.Row="1" Grid.Column="1">
+                        <Grid x:Name="RigtGrid">
+                            <Border CornerRadius="50" Opacity="0.6">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="/Resources/Images/Kanto.png"/>
+                                </Border.Background>
+                            </Border>
+                            <Label Foreground="WhiteSmoke" Content="Ver Mapa" FontSize="60" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Courier New" FontWeight="Bold"/>
+
+
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</Window>
