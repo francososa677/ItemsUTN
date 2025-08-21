@@ -45,6 +45,8 @@
                     <Button x:Name="PokedexButton"  Height="80"  Margin="0 10 0 0" Style="{DynamicResource LeftButtonStyle}" Content="Pokedex" HorizontalAlignment="Center" Width="254" Click="PokedexButton_Click" FontSize="34"/>
                     <Button x:Name="CombatsButton"  Height="80" Margin="0 10 0 0" Style="{DynamicResource LeftButtonStyle}" Content="Combates" HorizontalAlignment="Center" Width="254" Click="CombatsButton_Click" FontSize="34"/>
                     <Button x:Name="TrainersButton"  Height="80" Margin="0 10 0 0" Style="{DynamicResource LeftButtonStyle}" Content="Entrenadores" HorizontalAlignment="Center" Width="254" FontSize="34" Click="TrainersButton_Click"/>
+                    <Button x:Name="ItemsButton" Height="80" Margin="0 10 0 0" Style="{DynamicResource LeftButtonStyle}" Content="Items" HorizontalAlignment="Center" Width="254" FontSize="34" Click="ItemsButton_Click"/>
+
                 </StackPanel>
             </Border>
             <Grid x:Name="FormGrid" Grid.Column="1" Grid.Row="1">

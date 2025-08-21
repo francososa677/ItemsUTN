@@ -12,7 +12,6 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-
 namespace PokeDex
 {
     /// <summary>
@@ -24,6 +23,7 @@ namespace PokeDex
 
         private Grid InitForm;
         private PokedexControl PokedexForm = new();
+        private ItemControl ItemsForm = new(); // <-- Agregado
         private int CurrentOption = -1;
 
         #endregion
@@ -36,7 +36,7 @@ namespace PokeDex
             double Height = SystemParameters.PrimaryScreenHeight * 0.9;
             this.Height = Height;
             this.Width = Height / proportions;
-            
+
             InitializeComponent();
             //Esto es para poder mostrarlo mas adelante
             InitForm = this.InitGrid;
@@ -55,6 +55,7 @@ namespace PokeDex
         private void PokedexButton_Click(object sender, RoutedEventArgs e) => FormManager(1);
         private void CombatsButton_Click(object sender, RoutedEventArgs e) => FormManager(2);
         private void TrainersButton_Click(object sender, RoutedEventArgs e) => FormManager(3);
+        private void ItemsButton_Click(object sender, RoutedEventArgs e) => FormManager(4); // <-- Agregado
         private void UrlButton_Click(object sender, RoutedEventArgs e)
             => System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start https://www.youtube.com/watch?v=dQw4w9WgXcQ") { CreateNoWindow = true });
         #endregion
@@ -71,16 +72,17 @@ namespace PokeDex
             //Si el usuario apreta "No" entonces cancelamos el evento de cierre
             if (cierra.Equals(MessageBoxResult.No)) e.Cancel = true;
         }
-        
+
         private void FormManager(int option)
         {
-            if(CurrentOption == option) return;
+            if (CurrentOption == option) return;
             else
             {
                 HomeButton.IsEnabled = true;
                 PokedexButton.IsEnabled = true;
                 CombatsButton.IsEnabled = true;
                 TrainersButton.IsEnabled = true;
+                ItemsButton.IsEnabled = true; // <-- Agregado
                 FormGrid.Children.Clear();
                 CurrentOption = option;
                 switch (option)
@@ -98,6 +100,10 @@ namespace PokeDex
                         break;
                     case 3:
                         TrainersButton.IsEnabled = false;
+                        break;
+                    case 4:
+                        FormGrid.Children.Add(ItemsForm);
+                        ItemsButton.IsEnabled = false;
                         break;
                     default:
                         FormGrid.Children.Add(InitForm);
