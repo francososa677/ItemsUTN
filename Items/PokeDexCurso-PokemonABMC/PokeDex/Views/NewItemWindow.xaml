@@ -1,32 +1,35 @@
 ﻿<Window x:Class="PokeDex.Views.NewItemWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Nuevo Item" Height="450" Width="600" WindowStartupLocation="CenterScreen">
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+        Title="Nuevo Item" Height="450" Width="600" WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource PrimaryColorBack}">
+    <Viewbox x:Name="MainView" Stretch="Fill">
+        <Grid Margin="20" Width="560" Height="410">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <!-- Nombre del Item -->
-        <Label Content="Nombre:" Grid.Row="0"/>
-        <TextBox x:Name="NameTextBox" Grid.Row="0" Margin="150,0,0,0"/>
+            <!-- Nombre del Item -->
+            <Label Content="Nombre:" Grid.Row="0" Foreground="WhiteSmoke" FontFamily="Courier New" FontWeight="SemiBold"/>
+            <TextBox x:Name="NameTextBox" Grid.Row="0" Margin="150,0,0,0"/>
 
-        <!-- Stock máximo -->
-        <Label Content="Stock máximo:" Grid.Row="1" Margin="0,10,0,0"/>
-        <TextBox x:Name="MaxStockTextBox" Grid.Row="1" Margin="150,10,0,0"/>
+            <!-- Stock máximo -->
+            <Label Content="Stock máximo:" Grid.Row="1" Margin="0,10,0,0" Foreground="WhiteSmoke" FontFamily="Courier New" FontWeight="SemiBold"/>
+            <TextBox x:Name="MaxStockTextBox" Grid.Row="1" Margin="150,10,0,0"/>
 
-        <!-- Efecto -->
-        <Label Content="Efecto:" Grid.Row="2" Margin="0,10,0,0"/>
-        <TextBox x:Name="EffectTextBox" Grid.Row="2" Margin="150,10,0,0" Height="80" TextWrapping="Wrap" AcceptsReturn="True"/>
+            <!-- Efecto -->
+            <Label Content="Efecto:" Grid.Row="2" Margin="0,10,0,0" Foreground="WhiteSmoke" FontFamily="Courier New" FontWeight="SemiBold"/>
+            <TextBox x:Name="EffectTextBox" Grid.Row="2" Margin="150,10,0,0"  TextWrapping="Wrap" AcceptsReturn="True"/>
 
-        <!-- Botones -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Margin="0,20,0,0">
-            <Button Content="Guardar" Width="100" Margin="10" Click="SaveButton_Click"/>
-            <Button Content="Cancelar" Width="100" Margin="10" Click="CancelButton_Click"/>
-        </StackPanel>
-    </Grid>
+            <!-- Botones -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Margin="0,20,0,0">
+                <Button x:Name="SaveButton" Style="{DynamicResource OptionsButton}" Content="Guardar" Width="120" Height="40" Margin="0,0,10,0" Click="SaveButton_Click"/>
+                <Button x:Name="CancelButton" Style="{DynamicResource OptionsButton}" Content="Cancelar" Width="120" Height="40" Click="CancelButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </Viewbox>
 </Window>

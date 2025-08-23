@@ -18,7 +18,7 @@ namespace DAL.Adapters
         {
 
         }
-        private string BaseAdress = "http://localhost:91/";
+        private string BaseAdress = "https://localhost:1984/";
         private string EndPoint = "";
         private object? BodyRequest;
         private string? BodyResponse;

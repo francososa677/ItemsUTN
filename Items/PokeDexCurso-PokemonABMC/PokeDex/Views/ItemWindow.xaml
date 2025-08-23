@@ -1,24 +1,26 @@
 ﻿<Window x:Class="PokeDex.Views.ItemWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Detalle del Item" Height="500" Width="600" WindowStartupLocation="CenterScreen">
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+        Title="Detalle del Item" Height="500" Width="600" WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource PrimaryColorBack}">
+    <Viewbox x:Name="MainView" Stretch="Fill">
+        <Grid Margin="20" Width="560" Height="460">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <StackPanel x:Name="ItemInfoPanel" Grid.Row="0" Margin="0,0,0,20">
-            <!-- Aquí se mostrarán los detalles del item -->
-            <Label x:Name="ItemNameLabel" FontSize="28" FontWeight="Bold"/>
-            <TextBlock x:Name="ItemDescriptionText" TextWrapping="Wrap" FontSize="20" Margin="0,10,0,0"/>
-            <!-- Podés agregar más controles para mostrar otras propiedades del item -->
-        </StackPanel>
+            <StackPanel x:Name="ItemInfoPanel" Grid.Row="0" Margin="0,0,0,20">
+                <!-- Aquí se mostrarán los detalles del item -->
+                <Label x:Name="ItemNameLabel" FontSize="28" FontWeight="SemiBold" Foreground="WhiteSmoke" FontFamily="Courier New"/>
+                <TextBlock x:Name="ItemDescriptionText" TextWrapping="Wrap" FontSize="20" Margin="0,10,0,0" Foreground="WhiteSmoke" FontFamily="Arial"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" Margin="0,20,0,0">
-            <Button x:Name="ModifyButton" Content="Modificar" Width="120" Height="40" Click="ModifyButton_Click"/>
-            <Button x:Name="DeleteButton" Content="Eliminar" Width="120" Height="40" Click="DeleteButton_Click"/>
-            <Button x:Name="CloseButton" Content="Cerrar" Width="120" Height="40" Click="CloseButton_Click"/>
-        </StackPanel>
-    </Grid>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" Margin="0,20,0,0">
+                <Button x:Name="ModifyButton" Style="{DynamicResource OptionsButton}" Content="Modificar" Width="120" Height="40" Margin="0,0,10,0" Click="ModifyButton_Click"/>
+                <Button x:Name="DeleteButton" Style="{DynamicResource OptionsButton}" Content="Eliminar" Width="120" Height="40" Margin="0,0,10,0" Click="DeleteButton_Click"/>
+                <Button x:Name="CloseButton" Style="{DynamicResource OptionsButton}" Content="Cerrar" Width="120" Height="40" Click="CloseButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </Viewbox>
 </Window>
