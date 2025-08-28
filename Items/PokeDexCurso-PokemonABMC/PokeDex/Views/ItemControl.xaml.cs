@@ -33,17 +33,17 @@ namespace PokeDex.Views
         {
             try
             {
-                var allItems = await _itemAdapter.ObtenerItemsCompleto();
+                // ✅ Ahora usamos el endpoint que ya trae solo los activos
+                var activeItems = await _itemAdapter.ObtenerItemsActivo();
 
                 // Ordenar alfabéticamente
-                var activeItems = allItems
-                    .Where(i => i.ItemActivo)
+                var orderedItems = activeItems
                     .OrderBy(i => i.NombreItem)
                     .ToList();
 
                 MainWrap.Children.Clear();
 
-                foreach (var item in activeItems)
+                foreach (var item in orderedItems)
                 {
                     Button btn = new Button()
                     {
@@ -54,11 +54,11 @@ namespace PokeDex.Views
                         FontSize = 20,
                         FontFamily = new FontFamily("Courier New"),
                         FontWeight = FontWeights.SemiBold,
-                        Foreground = Brushes.Black,               // texto oscuro
-                        Background = Brushes.White,               // fondo blanco
+                        Foreground = Brushes.Black,
+                        Background = Brushes.White,
                         HorizontalContentAlignment = HorizontalAlignment.Center,
                         VerticalContentAlignment = VerticalAlignment.Center,
-                        BorderBrush = Brushes.Gray,               // borde gris
+                        BorderBrush = Brushes.Gray,
                         BorderThickness = new Thickness(2),
                         Content = new StackPanel
                         {
@@ -66,24 +66,24 @@ namespace PokeDex.Views
                             HorizontalAlignment = HorizontalAlignment.Center,
                             VerticalAlignment = VerticalAlignment.Center,
                             Children =
-                            {
-                                new TextBlock
-                                {
-                                    Text = item.NombreItem,
-                                    FontSize = 16,
-                                    FontWeight = FontWeights.SemiBold,
-                                    Foreground = Brushes.Black,
-                                    TextAlignment = TextAlignment.Center,
-                                    TextWrapping = TextWrapping.Wrap
-                                },
-                                new TextBlock
-                                {
-                                    Text = $"Stock: {item.StockMaximo}",
-                                    FontSize = 14,
-                                    Foreground = Brushes.DarkGray,
-                                    TextAlignment = TextAlignment.Center
-                                }
-                            }
+                    {
+                        new TextBlock
+                        {
+                            Text = item.NombreItem,
+                            FontSize = 16,
+                            FontWeight = FontWeights.SemiBold,
+                            Foreground = Brushes.Black,
+                            TextAlignment = TextAlignment.Center,
+                            TextWrapping = TextWrapping.Wrap
+                        },
+                        new TextBlock
+                        {
+                            Text = $"Stock: {item.StockMaximo}",
+                            FontSize = 14,
+                            Foreground = Brushes.DarkGray,
+                            TextAlignment = TextAlignment.Center
+                        }
+                    }
                         }
                     };
 
@@ -96,6 +96,7 @@ namespace PokeDex.Views
                 MessageBox.Show($"Error al cargar items: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
 
         /// <summary>
         /// Evento click en un botón de item

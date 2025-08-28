@@ -25,7 +25,7 @@ namespace PokeDex.Views
         /// </summary>
         private void LoadItemDetails()
         {
-            ItemNameLabel.Content = CurrentItem.NombreItem;
+            ItemNameLabel.Text = CurrentItem.NombreItem;
 
             ItemDescriptionText.Text = $"Stock máximo: {CurrentItem.StockMaximo}\n" +
                                        $"Efecto: {CurrentItem.Efecto}\n" +
